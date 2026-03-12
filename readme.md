@@ -1,60 +1,30 @@
 # ERP Resources
 
-Repositori terpusat untuk **shared assets** yang digunakan oleh semua modul frontend ERP PT Sepanjang Pangan.
+Repositori terpusat untuk shared assets yang digunakan oleh semua modul frontend ERP PT Sepanjang Pangan.
 
 ## Struktur Folder
 
-```
-erp-resources/
-├── css/          # Global stylesheets, CSS variables, design tokens
-├── fonts/        # Custom fonts (woff2, woff)
-├── icons/        # Icon set (SVG, sprite)
-└── image/        # Shared images (logo, brand assets, ilustrasi)
-```
+Berikut adalah struktur folder yang tersedia di dalam repositori ini:
 
-## Cara Menggunakan di Tiap Modul
+- css/
+  Berisi file stylesheet global, variabel CSS (contohnya style.css), dan design tokens.
+- fonts/
+  Berisi file typography atau custom fonts yang dipakai secara global.
+- icons/
+  Berisi set icon yang digunakan dalam antarmuka UI aplikasi.
+- image/
+  Berisi gambar-gambar umum, logo perusahaan, dan asset brand lainnya.
 
-Setiap modul frontend memiliki script `update-resources.sh`. Jalankan script tersebut untuk mengambil/memperbarui resources.
+## Cara Penggunaan di Modul Frontend
 
-```bash
-# Clone pertama kali / update ke versi terbaru
-./update-resources.sh
+Setiap modul disarankan untuk menarik resources dari repositori ini agar aset tetap tersentralisasi dan konsisten.
 
-# Pakai branch tertentu
-./update-resources.sh --branch develop
+Langkah-langkah umum:
+1. Sediakan script bash (contoh: update-resources.sh) di masing-masing modul frontend.
+2. Script tersebut akan melakukan clone repositori ini ke dalam folder spesifik (misalnya test-resources).
+3. Jalankan script tersebut setiap kali ada pembaruan pada repositori resources ini untuk mendapatkan versi terbaru.
 
-# Pakai versi/tag tertentu (direkomendasikan untuk production)
-./update-resources.sh --tag v1.2.0
-```
+## Pengembangan dan Kontribusi
 
-## Versioning
-
-Gunakan **semantic versioning** untuk merilis versi baru:
-
-| Tag | Kapan digunakan |
-|-----|----------------|
-| `v1.0.0` | Rilis stabil, breaking changes |
-| `v1.1.0` | Penambahan asset baru |
-| `v1.0.1` | Perbaikan kecil, hotfix |
-
-```bash
-# Cara membuat tag baru
-git tag -a v1.1.0 -m "Menambahkan icon set baru untuk modul inventory"
-git push origin v1.1.0
-```
-
-## Kontribusi
-
-1. Buat branch dari `main`: `git checkout -b feat/tambah-icon-inventory`
-2. Tambahkan asset yang diperlukan
-3. Buat Pull Request ke `main`
-4. Setelah merge, buat tag versi baru
-
-## Modul yang Menggunakan Repo Ini
-
-| Modul | Repository |
-|-------|-----------|
-| Frontend Playground | `github.com/YOUR_ORG/frontend-playground` |
-| Modul Inventory | `github.com/YOUR_ORG/erp-inventory` |
-| Modul HR | `github.com/YOUR_ORG/erp-hr` |
-| *(tambahkan modul lainnya)* | |
+Apabila Anda menambahkan asset baru (misalnya gambar, variabel warna CSS baru, atau file font), pastikan untuk meletakkannya di dalam folder yang sesuai.
+Hindari mengubah struktur utama kecuali jika diperlukan kordinasi dengan seluruh tim frontend.
