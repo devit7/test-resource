@@ -1,6 +1,6 @@
 # ERP Resources
 
-Repositori terpusat untuk shared assets yang digunakan oleh semua modul frontend ERP PT Sepanjang Pangan.
+Repositori terpusat untuk shared assets yang digunakan oleh semua modul frontend ERP.
 
 ## Struktur Folder
 
